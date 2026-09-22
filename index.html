@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpendWise Interactive Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h2>SpendWise</h2>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">Dashboard</a>
+        <a href="#" class="nav-item">Transactions</a>
+        <a href="#" class="nav-item">Budgets</a>
+        <a href="#" class="nav-item">Reports</a>
+        <a href="#" class="nav-item">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Header Area -->
+    <header class="header">
+      <div class="header-title">
+        <h1>Overview</h1>
+      </div>
+      <div class="user-profile">
+        <span>Welcome back!</span>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Interactive Input Controls -->
+      <section class="form-container">
+        <div class="form-group">
+          <h2>Set Monthly Income</h2>
+          <form id="income-form" class="inline-form">
+            <input type="number" id="income-input" placeholder="Enter Total Income ($)" step="0.01" required>
+            <button type="submit" class="btn">Update Income</button>
+          </form>
+        </div>
+
+        <div class="form-group">
+          <h2>Add Expense Item</h2>
+          <form id="expense-form" class="inline-form">
+            <input type="text" id="expense-name" placeholder="Category/Name (e.g., Food)" required>
+            <input type="number" id="expense-amount" placeholder="Amount ($)" step="0.01" required>
+            <button type="submit" class="btn">Add Expense</button>
+          </form>
+        </div>
+
+        <!-- Dynamic Budget Status Alert -->
+        <div id="budget-status" class="status-banner info">
+          Set your monthly income to view your budget health status.
+        </div>
+      </section>
+
+      <!-- Overall Financial Summary -->
+      <section class="summary-bar">
+        <div class="summary-card">
+          <h4>Total Income</h4>
+          <p id="total-income-display">$0.00</p>
+        </div>
+        <div class="summary-card">
+          <h4>Total Expenses</h4>
+          <p id="total-expenses-display">$0.00</p>
+        </div>
+        <div class="summary-card">
+          <h4>Remaining Balance</h4>
+          <p id="remaining-balance-display">$0.00</p>
+        </div>
+      </section>
+
+      <!-- Dynamic Category Cards Grid -->
+      <section>
+        <h2 class="section-title">Expense Records</h2>
+        <div class="cards-grid" id="cards-grid">
+          <!-- Cards populated dynamically by JavaScript -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
